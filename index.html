@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="/src/assets/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css">
+    <title>My Portfolio</title>
+  </head>
+  <body>
+    <div id="star-container"></div>
+    <div id="root"></div>
+
+    <script type="module" src="./src/main.jsx"></script>
+    <script>
+      const container = document.getElementById("star-container");
+const numStars = 200; // You can make this 500 or more if you want
+
+for (let i = 0; i < numStars; i++) {
+  const star = document.createElement("div");
+  star.classList.add("star");
+
+  // Random position
+  star.style.top = `${Math.random() * 100}%`;
+  star.style.left = `${Math.random() * 100}%`;
+
+  // Random animation duration and delay
+  star.style.animationDuration = `${1 + Math.random() * 2}s`;
+  star.style.animationDelay = `${Math.random() * 2}s`;
+
+  container.appendChild(star);
+}
+    </script>
+  </body>
+</html>
